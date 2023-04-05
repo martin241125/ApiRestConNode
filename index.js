@@ -1,5 +1,6 @@
 const express = require('express');
 const routerApi = require('./routes');
+const cors = require('cors');
 const {
   logError,
   handlerError,
@@ -8,6 +9,8 @@ const {
 const app = express();
 const port = 3000;
 app.use(express.json());
+
+app.use(cors());
 app.get('/', (req, res) => {
   res.send('Hola mi server en express');
 });
